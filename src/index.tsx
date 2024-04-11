@@ -9,12 +9,12 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import AllTasks from "./pages/AllTasks";
-import CompletedTasks from "./pages/CompletedTasks";
-import DeferredTasks from "./pages/DeferredTasks";
-import DiscardedTasks from "./pages/DiscardedTasks";
-import OngoingTasks from "./pages/OngoingTasks";
+import HomePage from "./pages/HomePage/HomePage";
+import AllTasks from "./pages/AllTasks/AllTasks";
+import CompletedTasks from "./pages/CompletedTasks/CompletedTasks";
+import DeferredTasks from "./pages/DeferredTasks/DeferredTasks";
+import DiscardedTasks from "./pages/DiscardedTasks/DiscardedTasks";
+import OngoingTasks from "./pages/OngoingTasks/OngoingTasks";
 import MainLayout from "./layout/MainLayout";
 import { Provider } from "react-redux";
 import store from "./store/store";
