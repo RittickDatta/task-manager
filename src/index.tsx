@@ -16,6 +16,9 @@ import DeferredTasks from "./pages/DeferredTasks";
 import DiscardedTasks from "./pages/DiscardedTasks";
 import OngoingTasks from "./pages/OngoingTasks";
 import MainLayout from "./layout/MainLayout";
+import { Provider } from "react-redux";
+import store from "./store/store";
+import CustomThemeProvider from "./shared/theme/CustomThemeProvider";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -36,7 +39,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <CustomThemeProvider>
+        <RouterProvider router={router} />
+      </CustomThemeProvider>
+    </Provider>
   </React.StrictMode>,
 );
 
