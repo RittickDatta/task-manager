@@ -1,8 +1,8 @@
-import { CssBaseline, ThemeProvider } from '@mui/material';
-import { darkTheme } from './variants/darkTheme';
-import { lightTheme } from './variants/lightTheme';
-import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { darkTheme } from "./variants/darkTheme";
+import { lightTheme } from "./variants/lightTheme";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 const defaultTheme = lightTheme;
 
@@ -13,10 +13,10 @@ export default function CustomThemeProvider({ children }) {
 
   useEffect(() => {
     switch (selectedTheme) {
-      case 'light':
+      case "light":
         setActiveTheme(lightTheme);
         break;
-      case 'dark':
+      case "dark":
         setActiveTheme(darkTheme);
         break;
       default:
