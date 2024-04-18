@@ -8,6 +8,7 @@
   padding: var(--padding-large);
   transition: 0.3s ease;
   box-shadow: 0px 0px 5px var(--color-dark);
+  z-index: 1;
 }
 
 .show-drawer-navbar {
