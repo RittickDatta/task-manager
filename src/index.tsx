@@ -19,6 +19,7 @@ import MainLayout from "./layout/MainLayout";
 import { Provider } from "react-redux";
 import store from "./store/store";
 import CustomThemeProvider from "./shared/theme/CustomThemeProvider";
+import Analytics from "./pages/Analytics/Analytics";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,6 +31,7 @@ const router = createBrowserRouter(
         <Route path="/tasks/discarded" element={<DiscardedTasks />} />
         <Route path="/tasks/ongoing" element={<OngoingTasks />} />
       </Route>
+      <Route path="/analytics" element={<Analytics />} />
     </Route>,
   ),
 );
