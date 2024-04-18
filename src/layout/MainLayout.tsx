@@ -18,7 +18,6 @@ const MainLayout = () => {
         showDrawerNavbar={showDrawerNav}
         toggleDrawerNavbar={handleDrawerNav}
       />
-      Main Layout
       <Outlet />
       <FooterNavbar />
     </div>
