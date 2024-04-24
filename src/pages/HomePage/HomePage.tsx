@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./HomePage.scss";
 import { IoMdCheckboxOutline } from "react-icons/io";
+import Modal from "../../shared/components/Modal/Modal";
 
 const HomePage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleModal = () => setIsModalOpen(!isModalOpen);
+
   return (
     <section className="home-page">
       <div className="content container home-page-container">
@@ -16,8 +21,23 @@ const HomePage = () => {
           </div>
         </div>
         <div className="add-task">
-          <button className="add-task-btn">Add Task</button>
+          <button className="add-task-btn" onClick={handleModal}>
+            Add Task
+          </button>
         </div>
+        {isModalOpen && (
+          <Modal
+            onCancel={handleModal}
+            onConfirm={handleModal}
+            modalHeader={"Add Task"}
+          >
+            <h2>Modal</h2>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis,
+              itaque?
+            </p>
+          </Modal>
+        )}
       </div>
     </section>
   );
