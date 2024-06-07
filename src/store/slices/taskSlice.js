@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { updateTaskObject } from "../../util/updateTaskObject.js";
 import { TaskStates } from "../../shared/enums.ts";
+import { v4 as uuidv4 } from "uuid";
 
 export const taskSlice = createSlice({
   name: "tasks",
@@ -9,7 +10,19 @@ export const taskSlice = createSlice({
   },
   reducers: {
     addTask: (state, action) => {
-      state.tasks.push(action.payload);
+      const newId = uuidv4();
+      const newTask = {
+        id: newId,
+        started: false,
+        startTime: null,
+        endTime: null,
+        completed: false,
+        deferred: false,
+        discarded: false,
+        ...action.payload,
+      };
+
+      state.tasks.push(newTask);
     },
     editTask: (state, action) => {
       const { id } = action.payload;

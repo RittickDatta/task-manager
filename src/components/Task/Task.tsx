@@ -5,10 +5,10 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { taskSchema } from "./taskSchema";
 import { addTask } from "../../store/slices/taskSlice";
 import { ITask } from "../../models/Task";
+import { AppDispatch } from "../../store/store";
 
 const Task = () => {
-  /* eslint-disable  @typescript-eslint/no-explicit-any */
-  const dispatch = useDispatch<any>();
+  const dispatch = useDispatch<AppDispatch>();
 
   const {
     register,
@@ -20,7 +20,6 @@ const Task = () => {
   });
 
   const handleFormSubmit = (data: ITask) => {
-    console.log(data);
     dispatch(addTask(data));
     reset();
   };

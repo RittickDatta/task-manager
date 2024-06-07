@@ -20,12 +20,14 @@ import { Provider } from "react-redux";
 import store from "./store/store";
 import CustomThemeProvider from "./shared/theme/CustomThemeProvider";
 import Analytics from "./pages/Analytics/Analytics";
+import NewTasks from "./pages/NewTasks/NewTasks";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<MainLayout />}>
       <Route path="/home" element={<HomePage />} />
       <Route path="/tasks" element={<AllTasks />}>
+        <Route path="/tasks/all-tasks" element={<NewTasks />} />
         <Route path="/tasks/completed" element={<CompletedTasks />} />
         <Route path="/tasks/deferred" element={<DeferredTasks />} />
         <Route path="/tasks/discarded" element={<DiscardedTasks />} />
