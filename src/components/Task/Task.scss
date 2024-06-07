@@ -1,0 +1,14 @@
+.form-add-task {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.add-task-form-btn {
+  grid-column: 2;
+  color: white;
+  background-color: var(--color-dark);
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+}

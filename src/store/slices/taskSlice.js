@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { updateTaskObject } from "../../util/updateTaskObject";
-import { TaskStates } from "../../shared/enums";
+import { updateTaskObject } from "../../util/updateTaskObject.js";
+import { TaskStates } from "../../shared/enums.ts";
 
 export const taskSlice = createSlice({
   name: "tasks",
@@ -9,7 +9,7 @@ export const taskSlice = createSlice({
   },
   reducers: {
     addTask: (state, action) => {
-      return state.tasks.push(action.payload);
+      state.tasks.push(action.payload);
     },
     editTask: (state, action) => {
       const { id } = action.payload;
@@ -76,3 +76,15 @@ export const taskSlice = createSlice({
     },
   },
 });
+
+export const {
+  addTask,
+  editTask,
+  removeTask,
+  markTaskAsComplete,
+  markTaskAsDeferred,
+  markTaskAsDiscarded,
+  markTaskAsOngoing,
+} = taskSlice.actions;
+
+export default taskSlice.reducer;

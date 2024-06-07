@@ -33,7 +33,7 @@ const Modal = ({
           </div>
           <div className="modal-action">
             <button className="modal-action-btn" onClick={() => onConfirm()}>
-              Confirm
+              Done
             </button>
           </div>
         </div>

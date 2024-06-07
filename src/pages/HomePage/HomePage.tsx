@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./HomePage.scss";
 import { IoMdCheckboxOutline } from "react-icons/io";
 import Modal from "../../shared/components/Modal/Modal";
+import Task from "../../components/Task/Task";
 
 const HomePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,11 +32,7 @@ const HomePage = () => {
             onConfirm={handleModal}
             modalHeader={"Add Task"}
           >
-            <h2>Modal</h2>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis,
-              itaque?
-            </p>
+            <Task />
           </Modal>
         )}
       </div>
